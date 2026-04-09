@@ -1,0 +1,167 @@
+@import "tailwindcss";
+@source "../../content/**/*.mdx";
+@source "../components/**/*.tsx";
+@source "../lib/**/*.ts";
+@plugin "@tailwindcss/typography";
+
+@theme inline {
+  --font-sans: "Barlow", sans-serif;
+}
+
+/* ══════════════════════════════════════════
+   VelaOps — Luxury Minimal Design System
+   Brand: Teal #00B3C6, Navy #0d1b2e
+   ══════════════════════════════════════════ */
+
+:root {
+  --accent: #00B3C6;
+  --accent-light: #33d4e4;
+  --accent-dim: rgba(0, 179, 198, 0.12);
+  --accent-line: rgba(0, 179, 198, 0.25);
+  --purple: #8b5cf6;
+  --black: #060b18;
+  --dark: #0d1b2e;
+  --dark2: #122240;
+  --dark3: #1a2f4a;
+  --white: #f5f3ef;
+  --grey: #8a8580;
+  --grey-light: #c8c4be;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Barlow", sans-serif;
+  background: var(--black);
+  color: var(--white);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection { background-color: rgba(0, 179, 198, 0.2); }
+
+/* ── CUSTOM CURSOR ── */
+.cursor {
+  position: fixed; width: 8px; height: 8px;
+  background: var(--accent); border-radius: 50%;
+  pointer-events: none; z-index: 9999;
+  transition: transform 0.15s ease;
+  transform: translate(-50%, -50%);
+}
+.cursor-ring {
+  position: fixed; width: 32px; height: 32px;
+  border: 1px solid rgba(0, 179, 198, 0.5);
+  border-radius: 50%; pointer-events: none; z-index: 9998;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translate(-50%, -50%);
+}
+
+/* ── TYPOGRAPHY ── */
+.font-display {
+  font-family: "Cormorant Garamond", serif;
+}
+.font-condensed {
+  font-family: "Barlow Condensed", sans-serif;
+}
+
+/* ── LABELS ── */
+.s-label {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 0.65rem; font-weight: 600; letter-spacing: 0.3em;
+  text-transform: uppercase; color: var(--accent);
+  display: flex; align-items: center; gap: 1rem;
+  margin-bottom: 2rem;
+}
+.s-label::before { content: ''; width: 30px; height: 1px; background: var(--accent); }
+
+/* ── SECTION HEADINGS ── */
+.section-h {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  font-weight: 300; line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+.section-h em { font-style: italic; color: var(--accent); }
+
+/* ── DIVIDER ── */
+.accent-rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-line), transparent);
+}
+
+/* ── BUTTONS ── */
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 1rem;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--accent);
+  text-decoration: none;
+  border: 1px solid var(--accent-line);
+  padding: 1rem 2rem;
+  transition: all 0.3s;
+}
+.btn-ghost:hover { background: var(--accent-dim); border-color: var(--accent); }
+
+.btn-plain {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 0.7rem; font-weight: 400; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--grey);
+  text-decoration: none; transition: color 0.3s;
+}
+.btn-plain:hover { color: var(--white); }
+
+.btn-submit {
+  align-self: flex-start;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.25em;
+  text-transform: uppercase; color: var(--black);
+  background: var(--accent); border: none;
+  padding: 1rem 2.5rem; cursor: pointer;
+  transition: opacity 0.3s;
+}
+.btn-submit:hover { opacity: 0.85; }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slowDrift {
+  0% { transform: translateY(-55%) rotate(0deg); }
+  50% { transform: translateY(-57%) rotate(0.5deg); }
+  100% { transform: translateY(-55%) rotate(0deg); }
+}
+
+.anim-hero-h1 { animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both; }
+.anim-eyebrow { animation: fadeUp 0.8s ease 0.1s both; }
+.anim-sub { animation: fadeUp 1s ease 0.5s both; }
+.anim-drift { animation: slowDrift 12s ease-in-out infinite; }
+
+/* ── SCROLL REVEAL ── */
+.reveal {
+  opacity: 0; transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── PROSE (blog) ── */
+.prose h2 { color: var(--dark); font-weight: 800; }
+.prose h3 { color: var(--dark); font-weight: 700; }
+.prose a { color: var(--accent); text-decoration: none; font-weight: 600; }
+.prose a:hover { text-decoration: underline; }
+.prose strong { color: var(--dark); }
+.prose li::marker { color: var(--accent); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .hide-mobile { display: none !important; }
+}
+@media (max-width: 640px) {
+  .hide-sm { display: none !important; }
+}
