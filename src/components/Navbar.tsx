@@ -8,6 +8,7 @@ const navLinks = [
   { href: "/how-it-works", label: "Process" },
   { href: "/case-study", label: "Case Study" },
   { href: "/pricing", label: "Pricing" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -36,23 +37,14 @@ export default function Navbar() {
           ))}
         </div>
 
-        <div className="hidden items-center gap-6 md:flex">
-          <Link
-            href="/contact"
-            className="flex items-center gap-3 font-condensed text-[0.7rem] font-medium uppercase tracking-[0.2em] text-[var(--grey)]"
-          >
-            <span className="h-px w-5 bg-[var(--accent-line)]" />
-            hello@velaops.ai
-          </Link>
-          <a
-            href="https://app.velaops.ai/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="border border-[var(--accent)] px-5 py-2 font-condensed text-[0.7rem] font-bold uppercase tracking-[0.2em] text-[var(--accent)] transition-all hover:bg-[var(--accent)] hover:text-[var(--black)]"
-          >
-            Get Started
-          </a>
-        </div>
+        <a
+          href="https://app.velaops.ai/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden border border-[var(--accent)] px-5 py-2 font-condensed text-[0.7rem] font-bold uppercase tracking-[0.2em] text-[var(--accent)] transition-all hover:bg-[var(--accent)] hover:text-[var(--black)] md:inline-flex"
+        >
+          Get Started
+        </a>
 
         {/* Mobile toggle */}
         <button
