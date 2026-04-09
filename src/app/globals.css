@@ -151,12 +151,32 @@ body {
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
 /* ── PROSE (blog) ── */
-.prose h2 { color: var(--dark); font-weight: 800; }
-.prose h3 { color: var(--dark); font-weight: 700; }
-.prose a { color: var(--accent); text-decoration: none; font-weight: 600; }
-.prose a:hover { text-decoration: underline; }
-.prose strong { color: var(--dark); }
-.prose li::marker { color: var(--accent); }
+article .prose {
+  --tw-prose-body: var(--grey-light);
+  --tw-prose-headings: var(--white);
+  --tw-prose-bold: var(--white);
+  --tw-prose-links: var(--accent);
+  --tw-prose-counters: var(--accent);
+  --tw-prose-bullets: var(--accent);
+  --tw-prose-quotes: var(--grey-light);
+  --tw-prose-quote-borders: var(--accent-line);
+  --tw-prose-code: var(--accent-light);
+  --tw-prose-hr: var(--accent-line);
+  --tw-prose-th-borders: var(--accent-line);
+  --tw-prose-td-borders: var(--accent-line);
+}
+article .prose h2,
+article .prose h3,
+article .prose h4 { color: var(--white) !important; }
+article .prose strong { color: var(--white) !important; }
+article .prose p { color: var(--grey-light); }
+article .prose li { color: var(--grey-light); }
+article .prose li::marker { color: var(--accent); }
+article .prose blockquote { color: var(--grey-light); border-left-color: var(--accent-line); }
+article .prose a { color: var(--accent); text-decoration: none; font-weight: 600; }
+article .prose a:hover { text-decoration: underline; }
+article .prose code { color: var(--accent-light); }
+article .prose hr { border-color: var(--accent-line); }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {

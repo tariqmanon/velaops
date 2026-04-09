@@ -51,7 +51,7 @@ export default async function BlogPostPage(
 
       {/* Content */}
       <article style={{ background: "var(--dark)", padding: "6rem clamp(2rem,4vw,4rem)" }}>
-        <div className="prose prose-lg prose-invert mx-auto max-w-3xl prose-headings:font-[family-name:var(--font-display)] prose-headings:text-[var(--white)] prose-p:text-[var(--grey-light)] prose-a:text-[var(--accent)] prose-strong:text-[var(--white)]">
+        <div className="prose prose-lg prose-invert mx-auto max-w-3xl prose-headings:font-[family-name:var(--font-display)]">
           <MDXRemote source={post.content} />
         </div>
       </article>
