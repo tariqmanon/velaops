@@ -48,7 +48,7 @@ export default function HomePage() {
         <div className="relative z-10">
           <div className="anim-eyebrow s-label">Managed AI Operations</div>
           <h1 className="anim-hero-h1 font-display max-w-5xl text-[clamp(4rem,9vw,9rem)] font-light italic leading-[0.9] text-[var(--white)]">
-            We are<br /><em className="text-[var(--accent)]">intelligence.</em>
+            We are<br /><em className="text-[var(--accent)]">intelligence..</em>
           </h1>
           <div className="anim-sub mt-12 flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
             <p className="max-w-[440px] text-base font-light leading-[1.75] text-[var(--grey-light)]">
