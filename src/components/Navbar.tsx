@@ -69,9 +69,9 @@ export default function Navbar() {
               {l.label}
             </Link>
           ))}
-          <Link href="/contact" className="mt-4 font-condensed text-sm uppercase tracking-[0.2em] text-[var(--grey)] hover:text-[var(--accent)]" onClick={() => setOpen(false)}>
-            Contact
-          </Link>
+          <a href="https://app.velaops.ai/" target="_blank" rel="noopener noreferrer" className="mt-4 border border-[var(--accent)] px-6 py-3 font-condensed text-sm font-bold uppercase tracking-[0.2em] text-[var(--accent)] hover:bg-[var(--accent)] hover:text-[var(--black)]" onClick={() => setOpen(false)}>
+            Get Started
+          </a>
         </div>
       </div>
     </header>

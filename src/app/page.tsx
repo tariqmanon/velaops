@@ -22,7 +22,7 @@ export default function HomePage() {
   return (
     <>
       {/* ═══ HERO ═══ */}
-      <section className="relative flex min-h-screen flex-col justify-end overflow-hidden" style={{ padding: "0 clamp(2rem,4vw,4rem) 5rem" }}>
+      <section className="relative flex min-h-screen flex-col justify-end overflow-hidden px-[clamp(2rem,4vw,4rem)] pb-[140px] pt-0 sm:pb-[100px] lg:pb-20">
         <div className="pointer-events-none absolute inset-0" style={{ background: "radial-gradient(ellipse 80% 60% at 60% 40%, rgba(0,179,198,0.04) 0%, transparent 70%), radial-gradient(ellipse 50% 80% at 90% 60%, rgba(139,92,246,0.03) 0%, transparent 60%)" }} />
         <div className="pointer-events-none absolute inset-0" style={{ backgroundImage: "linear-gradient(rgba(0,179,198,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,179,198,0.03) 1px, transparent 1px)", backgroundSize: "80px 80px" }} />
 
@@ -62,16 +62,16 @@ export default function HomePage() {
         </div>
 
         {/* Stats strip */}
-        <div className="absolute inset-x-0 bottom-0 flex border-t border-[var(--accent-line)]">
+        <div className="absolute inset-x-0 bottom-0 grid grid-cols-2 border-t border-[var(--accent-line)] sm:grid-cols-4">
           {[
             { n: "5,000+", l: "Operations completed" },
             { n: "8", l: "Dedicated AI agents" },
             { n: "3–4 hrs", l: "Your weekly commitment" },
             { n: "£299", l: "Starting per month" },
           ].map((s) => (
-            <div key={s.l} className="flex flex-1 flex-col gap-0.5 border-r border-[var(--accent-line)] px-8 py-5 last:border-r-0">
-              <span className="font-display text-[1.8rem] font-light text-[var(--white)]">{s.n}</span>
-              <span className="font-condensed text-[0.65rem] font-medium uppercase tracking-[0.15em] text-[var(--grey)]">{s.l}</span>
+            <div key={s.l} className="flex flex-col gap-0.5 border-b border-r border-[var(--accent-line)] px-6 py-4 last:border-r-0 sm:border-b-0 sm:px-8 sm:py-5 [&:nth-child(2)]:border-r-0 sm:[&:nth-child(2)]:border-r">
+              <span className="font-display text-[1.4rem] font-light text-[var(--white)] sm:text-[1.8rem]">{s.n}</span>
+              <span className="font-condensed text-[0.6rem] font-medium uppercase tracking-[0.15em] text-[var(--grey)] sm:text-[0.65rem]">{s.l}</span>
             </div>
           ))}
         </div>
@@ -124,7 +124,7 @@ export default function HomePage() {
           <ScrollReveal>
             <div className="grid border border-white/[0.06] sm:grid-cols-2 lg:grid-cols-4">
               {agents.map((a, i) => (
-                <div key={a.name} className={`border-b border-r border-white/[0.06] p-8 transition-colors hover:bg-[var(--accent-dim)] ${i % 4 === 3 ? "border-r-0" : ""} ${i >= 4 ? "lg:border-b-0" : ""}`}>
+                <div key={a.name} className={`relative border-b border-r border-white/[0.06] p-8 transition-colors hover:bg-[var(--accent-dim)] ${i % 4 === 3 ? "border-r-0" : ""} ${i >= 4 ? "lg:border-b-0" : ""}`}>
                   <div className="font-condensed text-[0.65rem] font-semibold tracking-[0.2em] text-[var(--accent)] opacity-60">{a.num}</div>
                   <div className="mt-4 font-display text-[1.8rem] font-light text-[var(--white)]">{a.name}</div>
                   <div className="font-condensed text-[0.7rem] font-semibold uppercase tracking-[0.15em] text-[var(--accent)]">{a.role}</div>
@@ -153,7 +153,7 @@ export default function HomePage() {
               { n: "02 — Build", t: "We build your agent stack", d: "Custom agents configured for your business, connected to your tools, live within 1–2 weeks. You don't touch a single line of code.", details: ["Live in 1–2 weeks", "Connected to your existing tools", "Full testing before go-live"] },
               { n: "03 — Operations", t: "We run it for you", d: "Agents work every week, outputs delivered for your review, we handle all technical maintenance. Your weekly time: 30–60 minutes.", details: ["Weekly output delivery", "You review and approve", "We maintain everything"] },
             ].map((s, i) => (
-              <div key={s.n} className={`relative p-12 ${i < 2 ? "border-r border-[var(--accent-line)]" : ""}`}>
+              <div key={s.n} className={`relative p-8 md:p-12 ${i < 2 ? "border-b border-[var(--accent-line)] md:border-b-0 md:border-r" : ""}`}>
                 <div className="absolute -top-px left-12 font-condensed text-[0.65rem] font-bold tracking-[0.2em] text-[var(--accent)]" style={{ background: "var(--dark2)", padding: "0 0.5rem", transform: "translateY(-50%)" }}>{s.n}</div>
                 <h3 className="font-display text-[1.8rem] font-light text-[var(--white)]">{s.t}</h3>
                 <p className="mt-4 text-sm font-light leading-[1.8] text-[var(--grey)]">{s.d}</p>
@@ -224,7 +224,7 @@ export default function HomePage() {
 
           <ScrollReveal className="grid border border-[var(--accent-line)] md:grid-cols-3">
             {plans.map((p, i) => (
-              <div key={p.name} className={`relative p-14 transition-colors ${i < 2 ? "border-r border-[var(--accent-line)]" : ""} ${p.featured ? "bg-[var(--accent-dim)]" : ""}`}>
+              <div key={p.name} className={`relative p-8 transition-colors sm:p-14 ${i < 2 ? "border-b border-[var(--accent-line)] md:border-b-0 md:border-r" : ""} ${p.featured ? "bg-[var(--accent-dim)]" : ""}`}>
                 {p.featured && <div className="absolute right-6 top-6 border border-[var(--accent-line)] px-2.5 py-1 font-condensed text-[0.6rem] font-bold uppercase tracking-[0.15em] text-[var(--accent)]">Most popular</div>}
                 <div className="font-condensed text-[0.7rem] font-bold uppercase tracking-[0.25em] text-[var(--accent)]">{p.name}</div>
                 <div className="mt-4 font-display text-[4.5rem] font-light leading-none text-[var(--white)]"><sup className="text-xl align-super">£</sup>{p.price}</div>
