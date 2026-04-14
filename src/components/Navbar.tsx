@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 
 const navLinks = [
   { href: "/agents", label: "The Agents" },
@@ -13,15 +14,23 @@ const navLinks = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50">
-      {/* Gradient fade */}
-      <div className="pointer-events-none absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(6,11,24,0.9) 0%, transparent 100%)" }} />
+    <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${scrolled ? "bg-[var(--black)]/85 backdrop-blur-lg border-b border-white/[0.06]" : "border-b border-transparent"}`}>
+      {/* Gradient fade — only when not scrolled */}
+      <div className={`pointer-events-none absolute inset-0 transition-opacity duration-500 ${scrolled ? "opacity-0" : "opacity-100"}`} style={{ background: "linear-gradient(to bottom, rgba(6,11,24,0.9) 0%, transparent 100%)" }} />
 
-      <nav className="relative mx-auto flex max-w-[1280px] items-center justify-between px-8 py-8 lg:px-16">
-        <Link href="/" className="font-display text-[1.6rem] font-light uppercase tracking-[0.15em] text-[var(--white)]">
-          Vela<em className="not-italic text-[var(--accent)]">Ops</em>
+      <nav className={`relative mx-auto flex max-w-[1280px] items-center justify-between px-8 lg:px-16 transition-all duration-500 ${scrolled ? "py-4" : "py-8"}`}>
+        <Link href="/">
+          <Image src="/velaops-logo.png" alt="VelaOps" width={140} height={36} priority />
         </Link>
 
         {/* Desktop */}

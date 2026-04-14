@@ -137,18 +137,72 @@ body {
   50% { transform: translateY(-57%) rotate(0.5deg); }
   100% { transform: translateY(-55%) rotate(0deg); }
 }
+@keyframes heroLineReveal {
+  from { opacity: 0; transform: translateY(100%) rotateX(25deg); filter: blur(4px); }
+  to   { opacity: 1; transform: translateY(0) rotateX(0deg);    filter: blur(0); }
+}
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 179, 198, 0); }
+  50% { box-shadow: 0 0 20px 2px rgba(0, 179, 198, 0.15); }
+}
 
-.anim-hero-h1 { animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both; }
+@keyframes orbit-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
 .anim-eyebrow { animation: fadeUp 0.8s ease 0.1s both; }
-.anim-sub { animation: fadeUp 1s ease 0.5s both; }
+.anim-sub { animation: fadeUp 1s ease 0.8s both; }
 .anim-drift { animation: slowDrift 12s ease-in-out infinite; }
+
+/* Hero — staggered line reveal */
+.hero-line {
+  display: block; overflow: hidden; perspective: 600px;
+}
+.hero-line > span {
+  display: inline-block;
+  animation: heroLineReveal 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.hero-line:nth-child(1) > span { animation-delay: 0.15s; }
+.hero-line:nth-child(2) > span { animation-delay: 0.35s; }
 
 /* ── SCROLL REVEAL ── */
 .reveal {
   opacity: 0; transform: translateY(24px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .reveal.visible { opacity: 1; transform: translateY(0); }
+
+.reveal-left {
+  opacity: 0; transform: translateX(-32px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-left.visible { opacity: 1; transform: translateX(0); }
+
+.reveal-right {
+  opacity: 0; transform: translateX(32px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+/* ── STAGGER CHILDREN ── */
+.stagger-up > * {
+  opacity: 0; transform: translateY(32px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.stagger-up > *.stagger-visible { opacity: 1; transform: translateY(0); }
+
+.stagger-left > * {
+  opacity: 0; transform: translateX(-32px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.stagger-left > *.stagger-visible { opacity: 1; transform: translateX(0); }
+
+.stagger-right > * {
+  opacity: 0; transform: translateX(32px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.stagger-right > *.stagger-visible { opacity: 1; transform: translateX(0); }
 
 /* ── PROSE (blog) ── */
 article .prose {

@@ -1,5 +1,8 @@
 import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
+import CountUp from "@/components/CountUp";
+import MagneticButton from "@/components/MagneticButton";
+import AgentOrbit from "@/components/AgentOrbit";
 
 const agents = [
   { num: "01", name: "Hunter", role: "Prospect Research", desc: "Finds, qualifies, and delivers targeted prospect contact lists every week, built around your ideal customer profile.", tier: "Starter" },
@@ -22,41 +25,28 @@ export default function HomePage() {
   return (
     <>
       {/* ═══ HERO ═══ */}
-      <section className="relative flex min-h-screen flex-col justify-end overflow-hidden px-[clamp(2rem,4vw,4rem)] pb-[140px] pt-0 sm:pb-[100px] lg:pb-20">
+      <section className="relative flex min-h-screen flex-col justify-end overflow-hidden px-[clamp(2rem,4vw,4rem)] pb-[240px] pt-0 sm:pb-[160px] lg:pb-[120px]">
         <div className="pointer-events-none absolute inset-0" style={{ background: "radial-gradient(ellipse 80% 60% at 60% 40%, rgba(0,179,198,0.04) 0%, transparent 70%), radial-gradient(ellipse 50% 80% at 90% 60%, rgba(139,92,246,0.03) 0%, transparent 60%)" }} />
         <div className="pointer-events-none absolute inset-0" style={{ backgroundImage: "linear-gradient(rgba(0,179,198,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,179,198,0.03) 1px, transparent 1px)", backgroundSize: "80px 80px" }} />
 
-        {/* AI Network Visual */}
-        <div className="anim-drift pointer-events-none absolute right-[6%] top-1/2 hidden w-[520px] -translate-y-[55%] opacity-50 lg:block">
-          <svg viewBox="0 0 520 520" fill="none">
-            <defs><radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0%" stopColor="#00B3C6" stopOpacity="0.15" /><stop offset="100%" stopColor="#00B3C6" stopOpacity="0" /></radialGradient></defs>
-            <circle cx="260" cy="260" r="200" fill="url(#glow)" />
-            <circle cx="260" cy="260" r="198" stroke="#00B3C6" strokeOpacity="0.12" strokeWidth="1" />
-            <circle cx="260" cy="260" r="140" stroke="#00B3C6" strokeOpacity="0.08" strokeWidth="1" />
-            <circle cx="260" cy="260" r="80" stroke="#00B3C6" strokeOpacity="0.15" strokeWidth="1" />
-            {[[260,62],[396,138],[440,295],[360,430],[160,430],[80,295],[124,138]].map(([cx,cy], i) => (
-              <circle key={i} cx={cx} cy={cy} r={i % 2 === 0 ? 6 : 5} fill={i % 2 === 0 ? "#00B3C6" : "#8b5cf6"} opacity={0.4 + (i % 3) * 0.15} />
-            ))}
-            <circle cx="260" cy="260" r="16" stroke="#00B3C6" strokeOpacity="0.4" strokeWidth="1.5" fill="none" />
-            <circle cx="260" cy="260" r="6" fill="#00B3C6" opacity="0.8" />
-            {[[260,62],[396,138],[440,295],[360,430],[160,430],[80,295],[124,138]].map(([x,y], i) => (
-              <line key={`l${i}`} x1={x} y1={y} x2={260} y2={260} stroke="#00B3C6" strokeOpacity="0.1" strokeWidth="1" />
-            ))}
-          </svg>
+        {/* AI Agent Orbit Visual */}
+        <div className="pointer-events-none absolute right-[6%] top-1/2 hidden -translate-y-1/2 opacity-80 lg:block">
+          <AgentOrbit />
         </div>
 
         <div className="relative z-10">
           <div className="anim-eyebrow s-label">Managed AI Operations</div>
-          <h1 className="anim-hero-h1 font-display max-w-5xl text-[clamp(4rem,9vw,9rem)] font-light italic leading-[0.9] text-[var(--white)]">
-            We are<br /><em className="text-[var(--accent)]">intelligence.</em>
+          <h1 className="font-display max-w-5xl text-[clamp(4rem,9vw,9rem)] font-light italic leading-[0.9] text-[var(--white)]">
+            <span className="hero-line"><span>We are</span></span>
+            <span className="hero-line"><span className="text-[var(--accent)]">intelligence.</span></span>
           </h1>
           <div className="anim-sub mt-12 flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
             <p className="max-w-[440px] text-base font-light leading-[1.75] text-[var(--grey-light)]">
               Every operation is designed around your output, time, and ambitions — so you can focus on what truly matters, while AI takes care of everything else.
             </p>
             <div className="flex flex-col items-start gap-3 lg:items-end">
-              <a href="https://app.velaops.ai/" target="_blank" rel="noopener noreferrer" className="btn-ghost">Start the journey →</a>
-              <a href="#about" className="btn-plain">Discover more ↓</a>
+              <MagneticButton href="https://app.velaops.ai/" target="_blank" rel="noopener noreferrer" className="btn-ghost">Start the journey →</MagneticButton>
+              <MagneticButton href="#about" className="btn-plain">Discover more ↓</MagneticButton>
             </div>
           </div>
         </div>
@@ -64,14 +54,16 @@ export default function HomePage() {
         {/* Stats strip */}
         <div className="absolute inset-x-0 bottom-0 grid grid-cols-2 border-t border-[var(--accent-line)] sm:grid-cols-4">
           {[
-            { n: "5,000+", l: "Operations completed" },
-            { n: "8", l: "Dedicated AI agents" },
-            { n: "3–4 hrs", l: "Your weekly commitment" },
-            { n: "£299", l: "Starting per month" },
+            { value: 5000, suffix: "+", label: "Operations completed" },
+            { value: 8, suffix: "", label: "Dedicated AI agents" },
+            { display: "3–4 hrs", label: "Your weekly commitment" },
+            { display: "£299", label: "Starting per month" },
           ].map((s) => (
-            <div key={s.l} className="flex flex-col gap-0.5 border-b border-r border-[var(--accent-line)] px-6 py-4 last:border-r-0 sm:border-b-0 sm:px-8 sm:py-5 [&:nth-child(2)]:border-r-0 sm:[&:nth-child(2)]:border-r">
-              <span className="font-display text-[1.4rem] font-light text-[var(--white)] sm:text-[1.8rem]">{s.n}</span>
-              <span className="font-condensed text-[0.6rem] font-medium uppercase tracking-[0.15em] text-[var(--grey)] sm:text-[0.65rem]">{s.l}</span>
+            <div key={s.label} className="flex flex-col gap-0.5 border-b border-r border-[var(--accent-line)] px-6 py-4 last:border-r-0 sm:border-b-0 sm:px-8 sm:py-5 [&:nth-child(2)]:border-r-0 sm:[&:nth-child(2)]:border-r">
+              <span className="font-display text-[1.4rem] font-light text-[var(--white)] sm:text-[1.8rem]">
+                {"value" in s ? <CountUp value={s.value!} suffix={s.suffix} duration={2000} /> : s.display}
+              </span>
+              <span className="font-condensed text-[0.6rem] font-medium uppercase tracking-[0.15em] text-[var(--grey)] sm:text-[0.65rem]">{s.label}</span>
             </div>
           ))}
         </div>
@@ -88,7 +80,7 @@ export default function HomePage() {
             <h2 className="section-h">VelaOps® is a managed AI<br />operations service for<br /><em>UK businesses.</em></h2>
             <p className="mt-8 text-lg font-light leading-[1.9] text-[var(--grey-light)]">From UK founders and operators to global industries — our clients trust us to deliver consistent, high-quality AI outputs on time, every time. No technical knowledge required.</p>
           </div>
-          <div className="flex flex-col gap-6">
+          <ScrollReveal stagger staggerDelay={150} direction="right" className="flex flex-col gap-6">
             {[
               { t: "Direct Access to AI Operations", d: "Run your go-to-market operation beyond boundaries. Our agent stacks ensure seamless, personalised output every week." },
               { t: "Your Freedom to Focus", d: "We value your time above all. VelaOps gives you the freedom to lead, grow, and decide — without operational burden." },
@@ -101,7 +93,7 @@ export default function HomePage() {
                 <p className="mt-3 text-sm font-light leading-[1.8] text-[var(--grey)]">{b.d}</p>
               </div>
             ))}
-          </div>
+          </ScrollReveal>
         </ScrollReveal>
       </section>
 
@@ -117,22 +109,20 @@ export default function HomePage() {
             </div>
             <div>
               <p className="text-base font-light leading-[1.85] text-[var(--grey-light)]">Each agent handles a specific function — from finding prospects to monitoring competitors. Together, they run your go-to-market operation, every single week.</p>
-              <a href="https://app.velaops.ai/" target="_blank" rel="noopener noreferrer" className="btn-ghost mt-8 inline-flex">Request your agent stack →</a>
+              <MagneticButton href="https://app.velaops.ai/" target="_blank" rel="noopener noreferrer" className="btn-ghost mt-8">Request your agent stack →</MagneticButton>
             </div>
           </ScrollReveal>
 
-          <ScrollReveal>
-            <div className="grid border border-white/[0.06] sm:grid-cols-2 lg:grid-cols-4">
-              {agents.map((a, i) => (
-                <div key={a.name} className={`relative border-b border-r border-white/[0.06] p-8 transition-colors hover:bg-[var(--accent-dim)] ${i % 4 === 3 ? "border-r-0" : ""} ${i >= 4 ? "lg:border-b-0" : ""}`}>
-                  <div className="font-condensed text-[0.65rem] font-semibold tracking-[0.2em] text-[var(--accent)] opacity-60">{a.num}</div>
-                  <div className="mt-4 font-display text-[1.8rem] font-light text-[var(--white)]">{a.name}</div>
-                  <div className="font-condensed text-[0.7rem] font-semibold uppercase tracking-[0.15em] text-[var(--accent)]">{a.role}</div>
-                  <p className="mt-4 text-[0.85rem] font-light leading-[1.7] text-[var(--grey)]">{a.desc}</p>
-                  <div className="absolute right-6 top-6 font-condensed text-[0.6rem] font-semibold uppercase tracking-[0.12em] text-[var(--grey)] opacity-50">{a.tier}</div>
-                </div>
-              ))}
-            </div>
+          <ScrollReveal stagger staggerDelay={100} className="grid border border-white/[0.06] sm:grid-cols-2 lg:grid-cols-4">
+            {agents.map((a, i) => (
+              <div key={a.name} className={`relative border-b border-r border-white/[0.06] p-8 transition-colors hover:bg-[var(--accent-dim)] ${i % 4 === 3 ? "border-r-0" : ""} ${i >= 4 ? "lg:border-b-0" : ""}`}>
+                <div className="font-condensed text-[0.65rem] font-semibold tracking-[0.2em] text-[var(--accent)] opacity-60">{a.num}</div>
+                <div className="mt-4 font-display text-[1.8rem] font-light text-[var(--white)]">{a.name}</div>
+                <div className="font-condensed text-[0.7rem] font-semibold uppercase tracking-[0.15em] text-[var(--accent)]">{a.role}</div>
+                <p className="mt-4 text-[0.85rem] font-light leading-[1.7] text-[var(--grey)]">{a.desc}</p>
+                <div className="absolute right-6 top-6 font-condensed text-[0.6rem] font-semibold uppercase tracking-[0.12em] text-[var(--grey)] opacity-50">{a.tier}</div>
+              </div>
+            ))}
           </ScrollReveal>
         </div>
       </section>
@@ -147,7 +137,7 @@ export default function HomePage() {
             <h2 className="section-h max-w-[600px]">A better way<br />to <em>operate.</em></h2>
           </ScrollReveal>
 
-          <ScrollReveal className="mt-24 grid border-t border-[var(--accent-line)] md:grid-cols-3">
+          <ScrollReveal stagger staggerDelay={200} direction="left" className="mt-24 grid border-t border-[var(--accent-line)] md:grid-cols-3">
             {[
               { n: "01 — Discovery", t: "We audit your operations", d: "A 30-minute call to understand your business, your goals, and where AI can make the biggest impact. Plain English, no jargon.", details: ["One call, 30 minutes", "No technical knowledge needed", "Full written brief produced"] },
               { n: "02 — Build", t: "We build your agent stack", d: "Custom agents configured for your business, connected to your tools, live within 1–2 weeks. You don't touch a single line of code.", details: ["Live in 1–2 weeks", "Connected to your existing tools", "Full testing before go-live"] },
@@ -264,7 +254,7 @@ export default function HomePage() {
             </div>
             <div className="flex flex-col gap-8">
               <p className="font-display text-2xl font-light italic text-[var(--white)]">Ready to start? <Link href="/contact" className="text-[var(--accent)] underline decoration-[var(--accent-line)] underline-offset-4 hover:decoration-[var(--accent)]">Get in touch</Link></p>
-              <a href="https://app.velaops.ai/" target="_blank" rel="noopener noreferrer" className="btn-ghost inline-flex self-start">Start for £299/month →</a>
+              <MagneticButton href="https://app.velaops.ai/" target="_blank" rel="noopener noreferrer" className="btn-ghost self-start">Start for £299/month →</MagneticButton>
             </div>
           </ScrollReveal>
         </div>

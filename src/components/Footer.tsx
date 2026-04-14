@@ -1,12 +1,16 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
     <footer className="border-t border-[var(--accent-line)]" style={{ background: "var(--black)", padding: "2rem clamp(2rem,4vw,4rem)" }}>
       <div className="mx-auto flex max-w-[1280px] flex-col items-center justify-between gap-4 sm:flex-row">
-        <span className="font-condensed text-[0.75rem] font-light tracking-[0.1em] text-[var(--grey)]">
-          &copy; {new Date().getFullYear()} VelaOps. All rights reserved.
-        </span>
+        <div className="flex items-center gap-3">
+          <Image src="/velaops-logo.png" alt="VelaOps" width={100} height={26} />
+          <span className="font-condensed text-[0.75rem] font-light tracking-[0.1em] text-[var(--grey)]">
+            &copy; {new Date().getFullYear()} All rights reserved.
+          </span>
+        </div>
         <div className="flex gap-8">
           {[
             { href: "/blog", label: "Blog" },
