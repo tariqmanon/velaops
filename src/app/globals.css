@@ -24,8 +24,8 @@
   --dark2: #122240;
   --dark3: #1a2f4a;
   --white: #f5f3ef;
-  --grey: #8a8580;
-  --grey-light: #c8c4be;
+  --grey: #a8a4a0;
+  --grey-light: #d8d5d0;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -69,7 +69,7 @@ body {
 /* ── LABELS ── */
 .s-label {
   font-family: "Barlow Condensed", sans-serif;
-  font-size: 0.65rem; font-weight: 600; letter-spacing: 0.3em;
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.3em;
   text-transform: uppercase; color: var(--accent);
   display: flex; align-items: center; gap: 1rem;
   margin-bottom: 2rem;
@@ -95,7 +95,7 @@ body {
 .btn-ghost {
   display: inline-flex; align-items: center; gap: 1rem;
   font-family: "Barlow Condensed", sans-serif;
-  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em;
+  font-size: 0.85rem; font-weight: 600; letter-spacing: 0.2em;
   text-transform: uppercase; color: var(--accent);
   text-decoration: none;
   border: 1px solid var(--accent-line);
@@ -106,7 +106,7 @@ body {
 
 .btn-plain {
   font-family: "Barlow Condensed", sans-serif;
-  font-size: 0.7rem; font-weight: 400; letter-spacing: 0.15em;
+  font-size: 0.8rem; font-weight: 400; letter-spacing: 0.15em;
   text-transform: uppercase; color: var(--grey);
   text-decoration: none; transition: color 0.3s;
 }
@@ -115,7 +115,7 @@ body {
 .btn-submit {
   align-self: flex-start;
   font-family: "Barlow Condensed", sans-serif;
-  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.25em;
+  font-size: 0.8rem; font-weight: 700; letter-spacing: 0.25em;
   text-transform: uppercase; color: var(--black);
   background: var(--accent); border: none;
   padding: 1rem 2.5rem; cursor: pointer;

@@ -32,7 +32,7 @@ export default function CaseStudyPage() {
             <h1 className="section-h text-[var(--white)]">
               Lolerflow: 80% GTM<br /><em>on Autopilot.</em>
             </h1>
-            <p className="mt-6 text-lg text-[var(--grey)]">How a SaaS founder reclaimed their week by letting VelaOps run the go-to-market machine.</p>
+            <p className="mt-6 text-xl text-[var(--grey)]">How a SaaS founder reclaimed their week by letting VelaOps run the go-to-market machine.</p>
           </ScrollReveal>
         </div>
       </section>
@@ -43,7 +43,7 @@ export default function CaseStudyPage() {
           {results.map((r) => (
             <ScrollReveal key={r.label}>
               <p className="font-display text-4xl text-[var(--accent)] lg:text-5xl">{r.stat}</p>
-              <p className="font-condensed mt-2 text-xs uppercase tracking-[0.15em] text-[var(--grey)]">{r.label}</p>
+              <p className="font-condensed mt-2 text-sm uppercase tracking-[0.15em] text-[var(--grey)]">{r.label}</p>
             </ScrollReveal>
           ))}
         </div>
@@ -55,7 +55,7 @@ export default function CaseStudyPage() {
           <ScrollReveal>
             <div className="s-label">The Challenge</div>
             <h2 className="section-h text-[var(--white)]">25+ hours a week<br /><em>on GTM.</em></h2>
-            <p className="mt-6 text-lg leading-relaxed text-[var(--grey)]">
+            <p className="mt-6 text-xl leading-relaxed text-[var(--grey)]">
               Lolerflow&apos;s founder was spending 25+ hours a week on go-to-market tasks — prospecting, writing emails, creating content, tracking metrics. With a small team and limited budget, hiring a full marketing department wasn&apos;t an option. They needed a way to scale GTM without scaling headcount.
             </p>
           </ScrollReveal>
@@ -76,11 +76,11 @@ export default function CaseStudyPage() {
               <ScrollReveal key={t.week}>
                 <div className="flex gap-6 border-l border-[var(--accent-line)] py-8 pl-8 transition-colors hover:bg-[var(--accent-dim)]">
                   <div className="flex-shrink-0">
-                    <span className="font-condensed text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">{t.week}</span>
+                    <span className="font-condensed text-sm font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">{t.week}</span>
                   </div>
                   <div>
                     <h3 className="font-display text-xl text-[var(--white)]">{t.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-[var(--grey)]">{t.desc}</p>
+                    <p className="mt-2 text-base leading-relaxed text-[var(--grey)]">{t.desc}</p>
                   </div>
                 </div>
               </ScrollReveal>
@@ -99,7 +99,7 @@ export default function CaseStudyPage() {
               <blockquote className="font-display text-2xl italic leading-relaxed text-[var(--white)] lg:text-3xl">
                 &ldquo;VelaOps gave me my week back. I went from 25 hours of GTM grind to 3–4 hours of strategic oversight. The agents just work.&rdquo;
               </blockquote>
-              <p className="font-condensed mt-6 text-xs uppercase tracking-[0.2em] text-[var(--grey)]">— Lolerflow Founder</p>
+              <p className="font-condensed mt-6 text-sm uppercase tracking-[0.2em] text-[var(--grey)]">— Lolerflow Founder</p>
             </div>
           </ScrollReveal>
         </div>
@@ -112,7 +112,7 @@ export default function CaseStudyPage() {
         <div className="mx-auto max-w-3xl text-center">
           <ScrollReveal>
             <h2 className="section-h text-[var(--white)]">Want results<br /><em>like Lolerflow.</em></h2>
-            <p className="mt-4 text-[var(--grey)]">Get your own AI agent network up and running within a week.</p>
+            <p className="mt-4 text-base text-[var(--grey)]">Get your own AI agent network up and running within a week.</p>
             <div className="mt-10 flex flex-col items-center justify-center gap-5 sm:flex-row">
               <a href="https://app.velaops.ai/" target="_blank" rel="noopener noreferrer" className="btn-ghost">Get Started</a>
               <Link href="/pricing" className="btn-ghost">View Pricing</Link>

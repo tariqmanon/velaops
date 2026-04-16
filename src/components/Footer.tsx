@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="mx-auto flex max-w-[1280px] flex-col items-center justify-between gap-4 sm:flex-row">
         <div className="flex items-center gap-3">
           <Image src="/velaops-logo.png" alt="VelaOps" width={100} height={26} />
-          <span className="font-condensed text-[0.75rem] font-light tracking-[0.1em] text-[var(--grey)]">
+          <span className="font-condensed text-[0.85rem] font-normal tracking-[0.1em] text-[var(--grey)]">
             &copy; {new Date().getFullYear()} All rights reserved.
           </span>
         </div>
@@ -17,7 +17,7 @@ export default function Footer() {
             { href: "/contact", label: "Contact" },
             { href: "https://linkedin.com", label: "LinkedIn" },
           ].map((l) => (
-            <Link key={l.href} href={l.href} className="font-condensed text-[0.65rem] font-medium uppercase tracking-[0.15em] text-[var(--grey)] transition-colors hover:text-[var(--accent)]">
+            <Link key={l.href} href={l.href} className="font-condensed text-[0.75rem] font-medium uppercase tracking-[0.15em] text-[var(--grey)] transition-colors hover:text-[var(--accent)]">
               {l.label}
             </Link>
           ))}

@@ -41,7 +41,7 @@ export default async function BlogPostPage(
       <section style={{ background: "var(--black)", padding: "8rem clamp(2rem,4vw,4rem)" }}>
         <div className="mx-auto max-w-3xl text-center">
           <ScrollReveal>
-            <time className="font-condensed text-xs uppercase tracking-[0.2em] text-[var(--grey)]">{post.date}</time>
+            <time className="font-condensed text-sm uppercase tracking-[0.2em] text-[var(--grey)]">{post.date}</time>
             <h1 className="font-display mt-4 text-4xl italic text-[var(--white)] sm:text-5xl">{post.title}</h1>
           </ScrollReveal>
         </div>

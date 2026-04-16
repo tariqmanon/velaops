@@ -22,7 +22,7 @@ export default function ContactPage() {
             <h1 className="section-h text-[var(--white)]">
               Get in<br /><em>Touch.</em>
             </h1>
-            <p className="mt-6 text-lg text-[var(--grey)]">Have a question or ready to get started? Drop us a message and we&apos;ll get back to you within one working day.</p>
+            <p className="mt-6 text-xl text-[var(--grey)]">Have a question or ready to get started? Drop us a message and we&apos;ll get back to you within one working day.</p>
           </ScrollReveal>
         </div>
       </section>
@@ -37,7 +37,7 @@ export default function ContactPage() {
             <div className="lg:col-span-2">
               <ScrollReveal>
                 <h2 className="font-display text-2xl text-[var(--white)]">Let&apos;s talk</h2>
-                <p className="mt-4 text-sm leading-relaxed text-[var(--grey)]">
+                <p className="mt-4 text-base leading-relaxed text-[var(--grey)]">
                   Whether you&apos;re exploring managed AI services or ready to deploy your first agents, we&apos;re here to help.
                 </p>
                 <div className="mt-10 space-y-6">
@@ -47,8 +47,8 @@ export default function ContactPage() {
                     { label: "Based in", value: "United Kingdom" },
                   ].map((item) => (
                     <div key={item.label}>
-                      <p className="font-condensed text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">{item.label}</p>
-                      <p className="mt-1 text-sm text-[var(--grey-light)]">{item.value}</p>
+                      <p className="font-condensed text-sm font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">{item.label}</p>
+                      <p className="mt-1 text-base text-[var(--grey-light)]">{item.value}</p>
                     </div>
                   ))}
                 </div>
@@ -58,7 +58,7 @@ export default function ContactPage() {
                     {["We review your message", "A team member gets back to you", "We schedule a discovery call"].map((step, i) => (
                       <div key={step} className="flex items-center gap-3">
                         <span className="font-display text-lg text-[var(--accent)]">{i + 1}</span>
-                        <span className="text-sm text-[var(--grey)]">{step}</span>
+                        <span className="text-base text-[var(--grey)]">{step}</span>
                       </div>
                     ))}
                   </div>
@@ -81,23 +81,23 @@ export default function ContactPage() {
                       <div className="grid gap-8 sm:grid-cols-2">
                         <div>
                           <label htmlFor="name" className="font-condensed block text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--grey)]">Full Name</label>
-                          <input type="text" id="name" name="name" required className="mt-3 w-full bg-transparent border-0 border-b border-white/[0.12] pb-3 text-sm text-[var(--white)] outline-none transition-colors focus:border-[var(--accent)] placeholder:text-[var(--grey)]" placeholder="Jane Smith" />
+                          <input type="text" id="name" name="name" required className="mt-3 w-full bg-transparent border-0 border-b border-white/[0.12] pb-3 text-base text-[var(--white)] outline-none transition-colors focus:border-[var(--accent)] placeholder:text-[var(--grey)]" placeholder="Jane Smith" />
                         </div>
                         <div>
                           <label htmlFor="email" className="font-condensed block text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--grey)]">Work Email</label>
-                          <input type="email" id="email" name="email" required className="mt-3 w-full bg-transparent border-0 border-b border-white/[0.12] pb-3 text-sm text-[var(--white)] outline-none transition-colors focus:border-[var(--accent)] placeholder:text-[var(--grey)]" placeholder="jane@company.co.uk" />
+                          <input type="email" id="email" name="email" required className="mt-3 w-full bg-transparent border-0 border-b border-white/[0.12] pb-3 text-base text-[var(--white)] outline-none transition-colors focus:border-[var(--accent)] placeholder:text-[var(--grey)]" placeholder="jane@company.co.uk" />
                         </div>
                       </div>
                       <div>
                         <label htmlFor="company" className="font-condensed block text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--grey)]">Company Name</label>
-                        <input type="text" id="company" name="company" className="mt-3 w-full bg-transparent border-0 border-b border-white/[0.12] pb-3 text-sm text-[var(--white)] outline-none transition-colors focus:border-[var(--accent)] placeholder:text-[var(--grey)]" placeholder="Acme Ltd" />
+                        <input type="text" id="company" name="company" className="mt-3 w-full bg-transparent border-0 border-b border-white/[0.12] pb-3 text-base text-[var(--white)] outline-none transition-colors focus:border-[var(--accent)] placeholder:text-[var(--grey)]" placeholder="Acme Ltd" />
                       </div>
                       <div>
                         <label htmlFor="message" className="font-condensed block text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--grey)]">Message</label>
-                        <textarea id="message" name="message" rows={5} required className="mt-3 w-full bg-transparent border-0 border-b border-white/[0.12] pb-3 text-sm text-[var(--white)] outline-none transition-colors focus:border-[var(--accent)] placeholder:text-[var(--grey)] resize-none" placeholder="Tell us about your business and what you'd like to achieve..." />
+                        <textarea id="message" name="message" rows={5} required className="mt-3 w-full bg-transparent border-0 border-b border-white/[0.12] pb-3 text-base text-[var(--white)] outline-none transition-colors focus:border-[var(--accent)] placeholder:text-[var(--grey)] resize-none" placeholder="Tell us about your business and what you'd like to achieve..." />
                       </div>
                       <button type="submit" className="btn-submit">Send Message</button>
-                      <p className="text-center text-xs text-[var(--grey)]">Or sign up directly at <a href="https://app.velaops.ai/" target="_blank" rel="noopener noreferrer" className="text-[var(--accent)] underline">app.velaops.ai</a></p>
+                      <p className="text-center text-sm text-[var(--grey)]">Or sign up directly at <a href="https://app.velaops.ai/" target="_blank" rel="noopener noreferrer" className="text-[var(--accent)] underline">app.velaops.ai</a></p>
                     </form>
                   )}
                 </div>

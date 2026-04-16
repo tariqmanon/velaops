@@ -40,7 +40,7 @@ export default function PricingPage() {
             <h1 className="section-h text-[var(--white)]">
               Simple, Transparent<br /><em>Pricing.</em>
             </h1>
-            <p className="mt-6 text-lg text-[var(--grey)]">No hidden fees. API costs invoiced separately at exact cost — no markup.</p>
+            <p className="mt-6 text-xl text-[var(--grey)]">No hidden fees. API costs invoiced separately at exact cost — no markup.</p>
           </ScrollReveal>
         </div>
       </section>
@@ -57,12 +57,12 @@ export default function PricingPage() {
                   {plan.popular && (
                     <span className="font-condensed absolute -top-3 left-1/2 -translate-x-1/2 bg-[var(--accent)] px-4 py-1 text-[10px] font-semibold uppercase tracking-[0.15em] text-[var(--black)]">Most Popular</span>
                   )}
-                  <h3 className="font-condensed text-sm font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">{plan.name}</h3>
+                  <h3 className="font-condensed text-base font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">{plan.name}</h3>
                   <div className="mt-4">
                     <span className="font-display text-5xl text-[var(--white)]">{plan.price}</span>
                     <span className="text-[var(--grey)]">/month</span>
                   </div>
-                  <p className="mt-2 text-sm text-[var(--grey)]">+ {plan.setup} one-off setup fee</p>
+                  <p className="mt-2 text-base text-[var(--grey)]">+ {plan.setup} one-off setup fee</p>
 
                   <div className="mt-6">
                     <p className="font-condensed text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--grey)]">Agents included</p>
@@ -75,7 +75,7 @@ export default function PricingPage() {
 
                   <ul className="mt-8 flex-1 space-y-3">
                     {plan.features.map((f) => (
-                      <li key={f} className="flex items-start gap-3 text-sm text-[var(--grey-light)]">
+                      <li key={f} className="flex items-start gap-3 text-base text-[var(--grey-light)]">
                         <svg className="mt-0.5 h-4 w-4 flex-shrink-0 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                         </svg>
@@ -85,14 +85,14 @@ export default function PricingPage() {
                   </ul>
 
                   <a href="https://app.velaops.ai/" target="_blank" rel="noopener noreferrer"
-                    className="mt-8 block border border-[var(--accent-line)] py-3.5 text-center font-condensed text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)] transition-all hover:bg-[var(--accent)] hover:text-[var(--black)]">
+                    className="mt-8 block border border-[var(--accent-line)] py-3.5 text-center font-condensed text-sm font-semibold uppercase tracking-[0.2em] text-[var(--accent)] transition-all hover:bg-[var(--accent)] hover:text-[var(--black)]">
                     Subscribe to {plan.name}
                   </a>
                 </div>
               </ScrollReveal>
             ))}
           </div>
-          <p className="mt-12 text-center text-sm text-[var(--grey)]">
+          <p className="mt-12 text-center text-base text-[var(--grey)]">
             All plans are billed monthly. API costs are invoiced separately at exact cost with no markup.{" "}
             <Link href="/contact" className="text-[var(--accent)] underline">Contact us</Link> if you have questions.
           </p>

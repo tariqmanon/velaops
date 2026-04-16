@@ -50,7 +50,7 @@ export default function Navbar() {
               <Link
                 key={l.href}
                 href={l.href}
-                className="font-condensed text-[0.75rem] font-medium uppercase tracking-[0.2em] text-[var(--grey-light)] transition-colors hover:text-[var(--accent)]"
+                className="font-condensed text-[0.85rem] font-medium uppercase tracking-[0.2em] text-[var(--grey-light)] transition-colors hover:text-[var(--accent)]"
               >
                 {l.label}
               </Link>
@@ -61,7 +61,7 @@ export default function Navbar() {
             href="https://app.velaops.ai/"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden border border-[var(--accent)] px-5 py-2 font-condensed text-[0.7rem] font-bold uppercase tracking-[0.2em] text-[var(--accent)] transition-all hover:bg-[var(--accent)] hover:text-[var(--black)] md:inline-flex"
+            className="hidden border border-[var(--accent)] px-5 py-2 font-condensed text-[0.8rem] font-bold uppercase tracking-[0.2em] text-[var(--accent)] transition-all hover:bg-[var(--accent)] hover:text-[var(--black)] md:inline-flex"
           >
             Get Started
           </a>

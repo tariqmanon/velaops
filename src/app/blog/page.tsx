@@ -20,7 +20,7 @@ export default function BlogPage() {
             <h1 className="section-h text-[var(--white)]">
               Our<br /><em>Blog.</em>
             </h1>
-            <p className="mt-6 text-lg text-[var(--grey)]">Insights on AI operations, automation and growing your business with intelligent agents.</p>
+            <p className="mt-6 text-xl text-[var(--grey)]">Insights on AI operations, automation and growing your business with intelligent agents.</p>
           </ScrollReveal>
         </div>
       </section>
@@ -42,7 +42,7 @@ export default function BlogPage() {
                     <h2 className="font-display mt-3 text-2xl text-[var(--white)]">
                       <Link href={`/blog/${post.slug}`} className="transition-colors hover:text-[var(--accent)]">{post.title}</Link>
                     </h2>
-                    <p className="mt-3 text-sm leading-relaxed text-[var(--grey)]">{post.excerpt}</p>
+                    <p className="mt-3 text-base leading-relaxed text-[var(--grey)]">{post.excerpt}</p>
                     <Link href={`/blog/${post.slug}`} className="btn-ghost mt-6 inline-flex text-[10px]">
                       Read more
                       <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>

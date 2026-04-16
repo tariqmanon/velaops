@@ -41,7 +41,7 @@ export default function HomePage() {
             <span className="hero-line"><span className="text-[var(--accent)]">intelligence.</span></span>
           </h1>
           <div className="anim-sub mt-12 flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
-            <p className="max-w-[440px] text-base font-light leading-[1.75] text-[var(--grey-light)]">
+            <p className="max-w-[440px] text-lg font-normal leading-[1.75] text-[var(--grey-light)]">
               Every operation is designed around your output, time, and ambitions — so you can focus on what truly matters, while AI takes care of everything else.
             </p>
             <div className="flex flex-col items-start gap-3 lg:items-end">
@@ -63,7 +63,7 @@ export default function HomePage() {
               <span className="font-display text-[1.4rem] font-light text-[var(--white)] sm:text-[1.8rem]">
                 {"value" in s ? <CountUp value={s.value!} suffix={s.suffix} duration={2000} /> : s.display}
               </span>
-              <span className="font-condensed text-[0.6rem] font-medium uppercase tracking-[0.15em] text-[var(--grey)] sm:text-[0.65rem]">{s.label}</span>
+              <span className="font-condensed text-[0.7rem] font-medium uppercase tracking-[0.15em] text-[var(--grey)] sm:text-[0.75rem]">{s.label}</span>
             </div>
           ))}
         </div>
@@ -78,7 +78,7 @@ export default function HomePage() {
           <div>
             <div className="s-label">About VelaOps</div>
             <h2 className="section-h">VelaOps® is a managed AI<br />operations service for<br /><em>UK businesses.</em></h2>
-            <p className="mt-8 text-lg font-light leading-[1.9] text-[var(--grey-light)]">From UK founders and operators to global industries — our clients trust us to deliver consistent, high-quality AI outputs on time, every time. No technical knowledge required.</p>
+            <p className="mt-8 text-xl font-normal leading-[1.9] text-[var(--grey-light)]">From UK founders and operators to global industries — our clients trust us to deliver consistent, high-quality AI outputs on time, every time. No technical knowledge required.</p>
           </div>
           <ScrollReveal stagger staggerDelay={150} direction="right" className="flex flex-col gap-6">
             {[
@@ -90,7 +90,7 @@ export default function HomePage() {
               <div key={b.t} className="relative border border-white/[0.06] p-8 transition-colors hover:border-[var(--accent-line)]">
                 <div className="absolute -top-px left-8 h-px w-10 bg-[var(--accent)]" />
                 <h3 className="font-display text-xl font-normal text-[var(--white)]">{b.t}</h3>
-                <p className="mt-3 text-sm font-light leading-[1.8] text-[var(--grey)]">{b.d}</p>
+                <p className="mt-3 text-base font-normal leading-[1.8] text-[var(--grey)]">{b.d}</p>
               </div>
             ))}
           </ScrollReveal>
@@ -108,7 +108,7 @@ export default function HomePage() {
               <h2 className="section-h">Eight agents.<br /><em>One team.</em></h2>
             </div>
             <div>
-              <p className="text-base font-light leading-[1.85] text-[var(--grey-light)]">Each agent handles a specific function — from finding prospects to monitoring competitors. Together, they run your go-to-market operation, every single week.</p>
+              <p className="text-lg font-normal leading-[1.85] text-[var(--grey-light)]">Each agent handles a specific function — from finding prospects to monitoring competitors. Together, they run your go-to-market operation, every single week.</p>
               <MagneticButton href="https://app.velaops.ai/" target="_blank" rel="noopener noreferrer" className="btn-ghost mt-8">Request your agent stack →</MagneticButton>
             </div>
           </ScrollReveal>
@@ -116,11 +116,11 @@ export default function HomePage() {
           <ScrollReveal stagger staggerDelay={100} className="grid border border-white/[0.06] sm:grid-cols-2 lg:grid-cols-4">
             {agents.map((a, i) => (
               <div key={a.name} className={`relative border-b border-r border-white/[0.06] p-8 transition-colors hover:bg-[var(--accent-dim)] ${i % 4 === 3 ? "border-r-0" : ""} ${i >= 4 ? "lg:border-b-0" : ""}`}>
-                <div className="font-condensed text-[0.65rem] font-semibold tracking-[0.2em] text-[var(--accent)] opacity-60">{a.num}</div>
+                <div className="font-condensed text-[0.75rem] font-semibold tracking-[0.2em] text-[var(--accent)] opacity-60">{a.num}</div>
                 <div className="mt-4 font-display text-[1.8rem] font-light text-[var(--white)]">{a.name}</div>
-                <div className="font-condensed text-[0.7rem] font-semibold uppercase tracking-[0.15em] text-[var(--accent)]">{a.role}</div>
-                <p className="mt-4 text-[0.85rem] font-light leading-[1.7] text-[var(--grey)]">{a.desc}</p>
-                <div className="absolute right-6 top-6 font-condensed text-[0.6rem] font-semibold uppercase tracking-[0.12em] text-[var(--grey)] opacity-50">{a.tier}</div>
+                <div className="font-condensed text-[0.8rem] font-semibold uppercase tracking-[0.15em] text-[var(--accent)]">{a.role}</div>
+                <p className="mt-4 text-base font-normal leading-[1.7] text-[var(--grey)]">{a.desc}</p>
+                <div className="absolute right-6 top-6 font-condensed text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-[var(--grey)] opacity-50">{a.tier}</div>
               </div>
             ))}
           </ScrollReveal>
@@ -144,12 +144,12 @@ export default function HomePage() {
               { n: "03 — Operations", t: "We run it for you", d: "Agents work every week, outputs delivered for your review, we handle all technical maintenance. Your weekly time: 30–60 minutes.", details: ["Weekly output delivery", "You review and approve", "We maintain everything"] },
             ].map((s, i) => (
               <div key={s.n} className={`relative p-8 md:p-12 ${i < 2 ? "border-b border-[var(--accent-line)] md:border-b-0 md:border-r" : ""}`}>
-                <div className="absolute -top-px left-12 font-condensed text-[0.65rem] font-bold tracking-[0.2em] text-[var(--accent)]" style={{ background: "var(--dark2)", padding: "0 0.5rem", transform: "translateY(-50%)" }}>{s.n}</div>
+                <div className="absolute -top-px left-12 font-condensed text-[0.75rem] font-bold tracking-[0.2em] text-[var(--accent)]" style={{ background: "var(--dark2)", padding: "0 0.5rem", transform: "translateY(-50%)" }}>{s.n}</div>
                 <h3 className="font-display text-[1.8rem] font-light text-[var(--white)]">{s.t}</h3>
-                <p className="mt-4 text-sm font-light leading-[1.8] text-[var(--grey)]">{s.d}</p>
+                <p className="mt-4 text-base font-normal leading-[1.8] text-[var(--grey)]">{s.d}</p>
                 <div className="mt-6 flex flex-col gap-2">
                   {s.details.map((d) => (
-                    <span key={d} className="flex items-center gap-2.5 font-condensed text-[0.7rem] font-medium uppercase tracking-[0.1em] text-[var(--grey)]">
+                    <span key={d} className="flex items-center gap-2.5 font-condensed text-[0.8rem] font-medium uppercase tracking-[0.1em] text-[var(--grey)]">
                       <span className="h-1 w-1 rounded-full bg-[var(--accent)]" />{d}
                     </span>
                   ))}
@@ -172,11 +172,11 @@ export default function HomePage() {
 
           <ScrollReveal className="mt-16 grid gap-20 border border-[var(--accent-line)] p-12 lg:grid-cols-2 lg:p-20">
             <div>
-              <div className="font-condensed text-[0.65rem] font-bold tracking-[0.3em] uppercase text-[var(--accent)]">Lolerflow &middot; SaaS Go-to-Market</div>
-              <p className="mt-4 text-base font-light leading-[1.85] text-[var(--grey-light)]">Lolerflow is running on a full VelaOps agent stack. 80% of go-to-market runs autonomously, every week.</p>
+              <div className="font-condensed text-[0.75rem] font-bold tracking-[0.3em] uppercase text-[var(--accent)]">Lolerflow &middot; SaaS Go-to-Market</div>
+              <p className="mt-4 text-lg font-normal leading-[1.85] text-[var(--grey-light)]">Lolerflow is running on a full VelaOps agent stack. 80% of go-to-market runs autonomously, every week.</p>
               <div className="mt-8 border-l-2 border-[var(--accent)] pl-6">
-                <p className="font-display text-lg font-light italic leading-[1.7] text-[var(--grey-light)]">&ldquo;All of this produced by 9 AI agents in 6 weeks. The agents handle the work. I handle the direction.&rdquo;</p>
-                <cite className="mt-4 block font-condensed text-[0.7rem] font-medium uppercase tracking-[0.15em] text-[var(--grey)] not-italic">— Lolerflow Founder</cite>
+                <p className="font-display text-xl font-light italic leading-[1.7] text-[var(--grey-light)]">&ldquo;All of this produced by 9 AI agents in 6 weeks. The agents handle the work. I handle the direction.&rdquo;</p>
+                <cite className="mt-4 block font-condensed text-[0.8rem] font-medium uppercase tracking-[0.15em] text-[var(--grey)] not-italic">— Lolerflow Founder</cite>
               </div>
               <Link href="/case-study" className="btn-ghost mt-8 inline-flex">Read the full case study →</Link>
             </div>
@@ -189,12 +189,12 @@ export default function HomePage() {
               ].map((s) => (
                 <div key={s.l} className="border-t border-[var(--accent-line)] pt-5">
                   <div className="font-display text-[3.5rem] font-light leading-none text-[var(--white)]">{s.n}</div>
-                  <div className="mt-2 font-condensed text-[0.65rem] font-medium uppercase tracking-[0.15em] text-[var(--grey)]">{s.l}</div>
+                  <div className="mt-2 font-condensed text-[0.75rem] font-medium uppercase tracking-[0.15em] text-[var(--grey)]">{s.l}</div>
                 </div>
               ))}
               <div className="col-span-2 border-t border-[var(--accent-line)] pt-5">
                 <div className="font-display text-[3.5rem] font-light leading-none text-[var(--white)]">3–4 <span className="text-[1.8rem] text-[var(--accent)]">hrs/wk</span></div>
-                <div className="mt-2 font-condensed text-[0.65rem] font-medium uppercase tracking-[0.15em] text-[var(--grey)]">Founder time required to manage everything</div>
+                <div className="mt-2 font-condensed text-[0.75rem] font-medium uppercase tracking-[0.15em] text-[var(--grey)]">Founder time required to manage everything</div>
               </div>
             </div>
           </ScrollReveal>
@@ -209,30 +209,30 @@ export default function HomePage() {
           <ScrollReveal className="mx-auto mb-20 max-w-[600px] text-center">
             <div className="s-label justify-center">Pricing</div>
             <h2 className="section-h">Simple, transparent<br /><em>pricing.</em></h2>
-            <p className="mt-6 text-[0.95rem] font-light leading-[1.8] text-[var(--grey)]">One monthly fee. API usage billed at exact cost — never marked up, never bundled. No surprises.</p>
+            <p className="mt-6 text-base font-normal leading-[1.8] text-[var(--grey)]">One monthly fee. API usage billed at exact cost — never marked up, never bundled. No surprises.</p>
           </ScrollReveal>
 
           <ScrollReveal className="grid border border-[var(--accent-line)] md:grid-cols-3">
             {plans.map((p, i) => (
               <div key={p.name} className={`relative p-8 transition-colors sm:p-14 ${i < 2 ? "border-b border-[var(--accent-line)] md:border-b-0 md:border-r" : ""} ${p.featured ? "bg-[var(--accent-dim)]" : ""}`}>
-                {p.featured && <div className="absolute right-6 top-6 border border-[var(--accent-line)] px-2.5 py-1 font-condensed text-[0.6rem] font-bold uppercase tracking-[0.15em] text-[var(--accent)]">Most popular</div>}
-                <div className="font-condensed text-[0.7rem] font-bold uppercase tracking-[0.25em] text-[var(--accent)]">{p.name}</div>
+                {p.featured && <div className="absolute right-6 top-6 border border-[var(--accent-line)] px-2.5 py-1 font-condensed text-[0.7rem] font-bold uppercase tracking-[0.15em] text-[var(--accent)]">Most popular</div>}
+                <div className="font-condensed text-[0.8rem] font-bold uppercase tracking-[0.25em] text-[var(--accent)]">{p.name}</div>
                 <div className="mt-4 font-display text-[4.5rem] font-light leading-none text-[var(--white)]"><sup className="text-xl align-super">£</sup>{p.price}</div>
-                <div className="mt-1 border-b border-white/[0.06] pb-6 text-sm font-light text-[var(--grey)]">per month &middot; + {p.setup} one-time setup</div>
+                <div className="mt-1 border-b border-white/[0.06] pb-6 text-base font-normal text-[var(--grey)]">per month &middot; + {p.setup} one-time setup</div>
                 <ul className="mt-6 flex flex-col gap-3">
                   {p.features.map((f) => (
-                    <li key={f} className="flex items-start gap-3 text-[0.85rem] font-light text-[var(--grey-light)]">
-                      <span className="mt-1.5 text-xs text-[var(--accent)]">—</span>{f}
+                    <li key={f} className="flex items-start gap-3 text-base font-normal text-[var(--grey-light)]">
+                      <span className="mt-1.5 text-sm text-[var(--accent)]">—</span>{f}
                     </li>
                   ))}
                 </ul>
-                <a href="https://app.velaops.ai/" target="_blank" rel="noopener noreferrer" className={`mt-10 block border border-[var(--accent-line)] p-4 text-center font-condensed text-[0.7rem] font-bold uppercase tracking-[0.2em] text-[var(--accent)] transition-all hover:bg-[var(--accent)] hover:text-[var(--black)] ${p.featured ? "!bg-[var(--accent)] !text-[var(--black)]" : ""}`}>
+                <a href="https://app.velaops.ai/" target="_blank" rel="noopener noreferrer" className={`mt-10 block border border-[var(--accent-line)] p-4 text-center font-condensed text-[0.8rem] font-bold uppercase tracking-[0.2em] text-[var(--accent)] transition-all hover:bg-[var(--accent)] hover:text-[var(--black)] ${p.featured ? "!bg-[var(--accent)] !text-[var(--black)]" : ""}`}>
                   Get started
                 </a>
               </div>
             ))}
           </ScrollReveal>
-          <p className="mt-8 text-center text-sm font-light text-[var(--grey)]">API costs billed at <strong className="font-normal text-[var(--accent-light)]">exact cost — zero markup, always.</strong></p>
+          <p className="mt-8 text-center text-base font-normal text-[var(--grey)]">API costs billed at <strong className="font-normal text-[var(--accent-light)]">exact cost — zero markup, always.</strong></p>
         </div>
       </section>
 
@@ -245,11 +245,11 @@ export default function HomePage() {
             <div>
               <div className="s-label">Get started</div>
               <h2 className="section-h">Fly beyond<br />what&apos;s <em>manual.</em></h2>
-              <p className="mt-6 max-w-[400px] text-base font-light leading-[1.85] text-[var(--grey-light)]">Send us a message and we&apos;ll respond within one business day. A 30-minute discovery call is the first step — no commitment required.</p>
+              <p className="mt-6 max-w-[400px] text-lg font-normal leading-[1.85] text-[var(--grey-light)]">Send us a message and we&apos;ll respond within one business day. A 30-minute discovery call is the first step — no commitment required.</p>
               <div className="mt-8 flex flex-col gap-4">
-                <span className="flex items-center gap-4 text-sm font-light text-[var(--grey-light)]"><span className="h-px w-5 bg-[var(--accent-line)]" />hello@velaops.ai</span>
-                <span className="flex items-center gap-4 text-sm font-light text-[var(--grey-light)]"><span className="h-px w-5 bg-[var(--accent-line)]" />velaops.ai</span>
-                <span className="flex items-center gap-4 text-sm font-light text-[var(--grey-light)]"><span className="h-px w-5 bg-[var(--accent-line)]" />Serving UK businesses nationwide</span>
+                <span className="flex items-center gap-4 text-base font-normal text-[var(--grey-light)]"><span className="h-px w-5 bg-[var(--accent-line)]" />hello@velaops.ai</span>
+                <span className="flex items-center gap-4 text-base font-normal text-[var(--grey-light)]"><span className="h-px w-5 bg-[var(--accent-line)]" />velaops.ai</span>
+                <span className="flex items-center gap-4 text-base font-normal text-[var(--grey-light)]"><span className="h-px w-5 bg-[var(--accent-line)]" />Serving UK businesses nationwide</span>
               </div>
             </div>
             <div className="flex flex-col gap-8">

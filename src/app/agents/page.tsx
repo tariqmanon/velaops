@@ -34,7 +34,7 @@ export default function AgentsPage() {
             <h1 className="section-h text-[var(--white)]">
               Meet Your<br /><em>AI Agents.</em>
             </h1>
-            <p className="mt-6 text-lg text-[var(--grey)]">
+            <p className="mt-6 text-xl text-[var(--grey)]">
               Eight specialised agents, each built to handle a core business function. Pick a plan and we&apos;ll set them up for you.
             </p>
           </ScrollReveal>
@@ -51,7 +51,7 @@ export default function AgentsPage() {
               <ScrollReveal key={a.name}>
                 <div className="border border-white/[0.06] p-8 transition-all hover:border-[var(--accent-line)] hover:bg-[var(--accent-dim)] h-full flex flex-col">
                   <div className="flex items-center justify-between">
-                    <span className="font-condensed text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">
+                    <span className="font-condensed text-sm font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <span className="font-condensed text-[10px] font-semibold uppercase tracking-[0.15em] text-[var(--grey)]">
@@ -59,7 +59,7 @@ export default function AgentsPage() {
                     </span>
                   </div>
                   <h3 className="font-display mt-5 text-2xl text-[var(--white)]">{a.name}</h3>
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-[var(--grey)]">{a.desc}</p>
+                  <p className="mt-3 flex-1 text-base leading-relaxed text-[var(--grey)]">{a.desc}</p>
                   <span className="font-condensed mt-6 inline-block self-start border border-[var(--accent-line)] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.15em] text-[var(--accent)]">
                     {tierLabel(a.tier)}
                   </span>
@@ -79,7 +79,7 @@ export default function AgentsPage() {
             <h2 className="section-h text-[var(--white)]">
               Ready to deploy<br /><em>your agent team.</em>
             </h2>
-            <p className="mt-4 text-[var(--grey)]">Choose a plan and we&apos;ll have your agents running within a week.</p>
+            <p className="mt-4 text-base text-[var(--grey)]">Choose a plan and we&apos;ll have your agents running within a week.</p>
             <div className="mt-10 flex flex-col items-center justify-center gap-5 sm:flex-row">
               <a href="https://app.velaops.ai/" target="_blank" rel="noopener noreferrer" className="btn-ghost">Get Started</a>
               <Link href="/pricing" className="btn-ghost">View Pricing</Link>

@@ -37,7 +37,7 @@ export default function HowItWorksPage() {
             <h1 className="section-h text-[var(--white)]">
               How It<br /><em>Works.</em>
             </h1>
-            <p className="mt-6 text-lg text-[var(--grey)]">Three simple steps to an AI-powered operation — no expertise required.</p>
+            <p className="mt-6 text-xl text-[var(--grey)]">Three simple steps to an AI-powered operation — no expertise required.</p>
           </ScrollReveal>
         </div>
       </section>
@@ -53,7 +53,7 @@ export default function HowItWorksPage() {
                 <div className="border border-white/[0.06] p-10 transition-all hover:border-[var(--accent-line)] hover:bg-[var(--accent-dim)] h-full flex flex-col">
                   <span className="font-display text-5xl text-[var(--accent)]">{s.num}</span>
                   <h2 className="font-display mt-6 text-2xl text-[var(--white)]">{s.title}</h2>
-                  <p className="mt-4 text-sm leading-relaxed text-[var(--grey)]">{s.desc}</p>
+                  <p className="mt-4 text-base leading-relaxed text-[var(--grey)]">{s.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -76,7 +76,7 @@ export default function HowItWorksPage() {
                 <div>
                   <svg className="h-5 w-5 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
                   <h3 className="font-display mt-4 text-xl text-[var(--white)]">{b.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-[var(--grey)]">{b.desc}</p>
+                  <p className="mt-3 text-base leading-relaxed text-[var(--grey)]">{b.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -98,7 +98,7 @@ export default function HowItWorksPage() {
               <ScrollReveal key={faq.q}>
                 <div className="py-8">
                   <h3 className="font-display text-lg text-[var(--white)]">{faq.q}</h3>
-                  <p className="mt-3 leading-relaxed text-[var(--grey)]">{faq.a}</p>
+                  <p className="mt-3 text-base leading-relaxed text-[var(--grey)]">{faq.a}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -113,7 +113,7 @@ export default function HowItWorksPage() {
         <div className="mx-auto max-w-3xl text-center">
           <ScrollReveal>
             <h2 className="section-h text-[var(--white)]">Ready to<br /><em>get started.</em></h2>
-            <p className="mt-4 text-[var(--grey)]">Sign up today and have your first agents live within a week.</p>
+            <p className="mt-4 text-base text-[var(--grey)]">Sign up today and have your first agents live within a week.</p>
             <div className="mt-10 flex flex-col items-center justify-center gap-5 sm:flex-row">
               <a href="https://app.velaops.ai/" target="_blank" rel="noopener noreferrer" className="btn-ghost">Get Started</a>
               <Link href="/pricing" className="btn-ghost">View Pricing</Link>
