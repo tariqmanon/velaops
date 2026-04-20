@@ -45,8 +45,8 @@ export default function HomePage() {
               Every operation is designed around your output, time, and ambitions — so you can focus on what truly matters, while AI takes care of everything else.
             </p>
             <div className="flex flex-col items-start gap-3 lg:items-end">
-              <MagneticButton href="https://app.velaops.ai/" target="_blank" rel="noopener noreferrer" className="btn-ghost">Start the journey →</MagneticButton>
-              <MagneticButton href="#about" className="btn-plain">Discover more ↓</MagneticButton>
+              <MagneticButton href="/contact" className="btn-ghost">Book your free discovery call →</MagneticButton>
+              <MagneticButton href="#agents" className="btn-plain">See which agents fit your business ↓</MagneticButton>
             </div>
           </div>
         </div>
@@ -99,6 +99,36 @@ export default function HomePage() {
 
       <div className="accent-rule" />
 
+      {/* ═══ WHO THIS IS FOR ═══ */}
+      <section className="py-32" style={{ background: "var(--black)", padding: "8rem clamp(2rem,4vw,4rem)" }}>
+        <div className="mx-auto max-w-[1280px]">
+          <ScrollReveal className="mb-16 max-w-[720px]">
+            <div className="s-label">Who this is for</div>
+            <h2 className="section-h">Built for UK founders,<br />solo operators and<br /><em>small teams.</em></h2>
+            <p className="mt-8 text-lg font-normal leading-[1.85] text-[var(--grey-light)]">
+              Perfect for UK businesses who want a full marketing and operations function without hiring one. If you&apos;re running lean and want AI-powered output without the overhead, VelaOps is built for you.
+            </p>
+          </ScrollReveal>
+
+          <ScrollReveal stagger staggerDelay={120} className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {[
+              { t: "Founders wearing every hat", d: "You're the CEO, marketer, SDR, and content creator. We take the operational load off your plate." },
+              { t: "Solo operators & consultants", d: "Scale your output without scaling your headcount. Look and operate like a much bigger team." },
+              { t: "Small teams of 1–10", d: "No in-house marketing function? No problem. Deploy an AI team that runs alongside yours." },
+              { t: "Service businesses", d: "Agencies, professional services, B2B SaaS — anyone who needs steady pipeline but can't justify an SDR hire." },
+            ].map((item) => (
+              <div key={item.t} className="relative border border-white/[0.06] p-8 transition-colors hover:border-[var(--accent-line)] hover:bg-[var(--accent-dim)]">
+                <div className="absolute -top-px left-8 h-px w-10 bg-[var(--accent)]" />
+                <h3 className="font-display text-xl font-normal text-[var(--white)]">{item.t}</h3>
+                <p className="mt-3 text-base font-normal leading-[1.8] text-[var(--grey)]">{item.d}</p>
+              </div>
+            ))}
+          </ScrollReveal>
+        </div>
+      </section>
+
+      <div className="accent-rule" />
+
       {/* ═══ AGENTS ═══ */}
       <section id="agents" className="py-32" style={{ background: "var(--black)", padding: "8rem clamp(2rem,4vw,4rem)" }}>
         <div className="mx-auto max-w-[1280px]">
@@ -109,7 +139,7 @@ export default function HomePage() {
             </div>
             <div>
               <p className="text-lg font-normal leading-[1.85] text-[var(--grey-light)]">Each agent handles a specific function — from finding prospects to monitoring competitors. Together, they run your go-to-market operation, every single week.</p>
-              <MagneticButton href="https://app.velaops.ai/" target="_blank" rel="noopener noreferrer" className="btn-ghost mt-8">Request your agent stack →</MagneticButton>
+              <MagneticButton href="/contact" className="btn-ghost mt-8">Get your agent stack in 2 weeks →</MagneticButton>
             </div>
           </ScrollReveal>
 
@@ -244,7 +274,7 @@ export default function HomePage() {
           <ScrollReveal className="grid gap-16 lg:grid-cols-2 lg:gap-32">
             <div>
               <div className="s-label">Get started</div>
-              <h2 className="section-h">Fly beyond<br />what&apos;s <em>manual.</em></h2>
+              <h2 className="section-h">Ready to put your GTM<br /><em>on autopilot?</em></h2>
               <p className="mt-6 max-w-[400px] text-lg font-normal leading-[1.85] text-[var(--grey-light)]">Send us a message and we&apos;ll respond within one business day. A 30-minute discovery call is the first step — no commitment required.</p>
               <div className="mt-8 flex flex-col gap-4">
                 <span className="flex items-center gap-4 text-base font-normal text-[var(--grey-light)]"><span className="h-px w-5 bg-[var(--accent-line)]" />hello@velaops.ai</span>
@@ -254,7 +284,7 @@ export default function HomePage() {
             </div>
             <div className="flex flex-col gap-8">
               <p className="font-display text-2xl font-light italic text-[var(--white)]">Ready to start? <Link href="/contact" className="text-[var(--accent)] underline decoration-[var(--accent-line)] underline-offset-4 hover:decoration-[var(--accent)]">Get in touch</Link></p>
-              <MagneticButton href="https://app.velaops.ai/" target="_blank" rel="noopener noreferrer" className="btn-ghost self-start">Start for £299/month →</MagneticButton>
+              <MagneticButton href="/contact" className="btn-ghost self-start">Book your free discovery call →</MagneticButton>
             </div>
           </ScrollReveal>
         </div>

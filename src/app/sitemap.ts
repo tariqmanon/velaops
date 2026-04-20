@@ -6,17 +6,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticPages = [
     "",
+    "/about",
     "/how-it-works",
     "/agents",
     "/pricing",
     "/case-study",
     "/contact",
     "/blog",
+    "/privacy",
+    "/terms",
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,
-    priority: route === "" ? 1 : 0.8,
+    priority: route === "" ? 1 : route === "/privacy" || route === "/terms" ? 0.3 : 0.8,
   }));
 
   const blogPosts = getAllPosts().map((post) => ({

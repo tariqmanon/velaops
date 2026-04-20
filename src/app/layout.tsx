@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { OrganisationSchema } from "@/components/StructuredData";
 import CursorEffect from "@/components/CursorEffect";
+import BackToTop from "@/components/BackToTop";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -68,6 +69,7 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
+        <BackToTop />
       </body>
     </html>
   );

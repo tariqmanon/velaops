@@ -98,6 +98,73 @@ export default function PricingPage() {
           </p>
         </div>
       </section>
+
+      <div className="accent-rule" />
+
+      {/* ═══ COMPARISON TABLE ═══ */}
+      <section style={{ background: "var(--dark2)", padding: "8rem clamp(2rem,4vw,4rem)" }}>
+        <div className="mx-auto max-w-5xl">
+          <ScrollReveal className="mx-auto mb-14 max-w-2xl text-center">
+            <div className="s-label justify-center">Compare plans</div>
+            <h2 className="section-h text-[var(--white)]">Pick the right fit<br /><em>for your team.</em></h2>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <div className="overflow-x-auto border border-[var(--accent-line)]">
+              <table className="w-full min-w-[640px] border-collapse text-left">
+                <thead>
+                  <tr className="border-b border-[var(--accent-line)] bg-[var(--dark)]">
+                    <th className="p-5 font-condensed text-sm font-semibold uppercase tracking-[0.2em] text-[var(--grey-light)]">Feature</th>
+                    <th className="p-5 text-center font-condensed text-sm font-bold uppercase tracking-[0.2em] text-[var(--accent)]">Starter</th>
+                    <th className="p-5 text-center font-condensed text-sm font-bold uppercase tracking-[0.2em] text-[var(--accent)]" style={{ background: "var(--accent-dim)" }}>Growth</th>
+                    <th className="p-5 text-center font-condensed text-sm font-bold uppercase tracking-[0.2em] text-[var(--accent)]">Full Stack</th>
+                  </tr>
+                </thead>
+                <tbody className="text-base">
+                  {[
+                    { f: "Monthly price", s: "£299", g: "£599", fs: "£999" },
+                    { f: "One-off setup", s: "£500", g: "£750", fs: "£1,000" },
+                    { f: "AI agents included", s: "3", g: "6", fs: "8" },
+                    { f: "Hunter — Lead generation", s: true, g: true, fs: true },
+                    { f: "Mailer — Outreach sequences", s: true, g: true, fs: true },
+                    { f: "Pulse — Weekly reports", s: true, g: true, fs: true },
+                    { f: "Sparky — Content creation", s: false, g: true, fs: true },
+                    { f: "Tracker — Analytics", s: false, g: true, fs: true },
+                    { f: "Watch — Competitor monitoring", s: false, g: true, fs: true },
+                    { f: "Bolt — Workflow automation", s: false, g: false, fs: true },
+                    { f: "Help — Customer support", s: false, g: false, fs: true },
+                    { f: "Review cadence", s: "Monthly", g: "Fortnightly", fs: "Weekly" },
+                    { f: "Support level", s: "Email", g: "Priority", fs: "Dedicated AM" },
+                  ].map((row, i) => (
+                    <tr key={row.f} className={`border-b border-[var(--accent-line)] ${i % 2 === 0 ? "bg-[var(--dark)]/30" : ""}`}>
+                      <td className="p-5 text-[var(--grey-light)]">{row.f}</td>
+                      <td className="p-5 text-center text-[var(--grey-light)]">
+                        {typeof row.s === "boolean" ? <Cell on={row.s} /> : row.s}
+                      </td>
+                      <td className="p-5 text-center text-[var(--grey-light)]" style={{ background: "var(--accent-dim)" }}>
+                        {typeof row.g === "boolean" ? <Cell on={row.g} /> : row.g}
+                      </td>
+                      <td className="p-5 text-center text-[var(--grey-light)]">
+                        {typeof row.fs === "boolean" ? <Cell on={row.fs} /> : row.fs}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
     </>
+  );
+}
+
+function Cell({ on }: { on: boolean }) {
+  return on ? (
+    <svg className="mx-auto h-5 w-5 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+    </svg>
+  ) : (
+    <span className="text-[var(--grey)]">—</span>
   );
 }
